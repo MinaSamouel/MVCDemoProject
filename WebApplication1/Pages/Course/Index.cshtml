@@ -1,0 +1,39 @@
+﻿@page
+@model WebApplication1.Pages.Course.IndexModel
+@{
+    ViewBag.Title = "Course Index";
+
+}
+
+<h2>Course Index</h2>
+
+<p class="text-center">
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CourseId </th>
+            <th>CourseName </th>
+            <th>CourseHour </th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+<tbody>
+@foreach (var item in Model.Courses)
+{
+    <tr>
+        <td>@item.CourseId </td>
+        <td>@item.CourseName</td>
+        <td>@item.TotalHours</td>
+        <td>
+            <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.CourseId">Edit</a>
+            <a class="btn btn-dark" asp-page="./Details" asp-route-id="@item.CourseId">Details</a>
+            <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.CourseId">Delete</a>
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+

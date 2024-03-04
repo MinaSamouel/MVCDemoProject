@@ -1,0 +1,51 @@
+﻿@page
+@model WebApplication1.Pages.Student.CreateModel
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h1>Create</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="text-center">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="form-group">
+                <label asp-for="Student.StudentName" class="control-label"></label>
+                <input asp-for="Student.StudentName" class="form-control" />
+                <span asp-validation-for="Student.StudentName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Student.Email" class="control-label"></label>
+                <input asp-for="Student.Email" class="form-control" />
+                <span asp-validation-for="Student.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Student.StudentAge" class="control-label"></label>
+                <input asp-for="Student.StudentAge" class="form-control" />
+                <span asp-validation-for="Student.StudentAge" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Student.DepartmentId" class="control-label"></label>
+                <select asp-for="Student.DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId">
+                    <option value="">-- Select Department --</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-dark" asp-page="Index">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

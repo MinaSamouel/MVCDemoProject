@@ -1,0 +1,28 @@
+﻿@page "{id?}"
+@model WebApplication1.Pages.Course.EditModel
+@{
+    ViewBag.Title ="Course Edit";
+}
+
+<div class="container">
+    <form method="post" class="m-5">
+        <div class="mb-3">
+            <label asp-for="Course.CourseId" class="form-label">CourseId</label>
+            <input asp-for="Course.CourseId" class="form-control" placeholder="CourseName" readonly/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Course.CourseName" class="form-label"> CourseName</label>
+            <input asp-for="Course.CourseName" class="form-control" placeholder="CourseName"/>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Course.TotalHours" class="form-label"> CourseHour</label>
+            <input asp-for="Course.TotalHours" class="form-control" placeholder="CourseHour"/>
+        </div>
+
+        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+
+        <input type="submit" class="btn btn-warning" value=" Update Course ">
+
+        <a class="btn btn-dark" asp-area="" asp-page="/Course/Index">Go to index</a>
+    </form>
+</div>

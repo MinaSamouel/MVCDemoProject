@@ -1,0 +1,29 @@
+﻿@page "{id?}"
+@model WebApplication1.Pages.Course.DeleteModel
+@{
+    ViewBag.Title = "Course Delete";
+}
+
+<div class="container">
+    <form method="post" class="m-5">
+        <div class="mb-3">
+            <label asp-for="Course.CourseId" class="form-label"> CourseId</label>
+            <input asp-for="Course.CourseId" class="form-control" placeholder="CourseId" readonly/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Course.CourseName" class="form-label"> CourseName</label>
+            <input asp-for="Course.CourseName" class="form-control" placeholder="CourseName" readonly />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Course.TotalHours" class="form-label"> CourseHour</label>
+            <input asp-for="Course.TotalHours" class="form-control" placeholder="CourseHour" readonly />
+        </div>
+
+
+        <input type="submit" class="btn btn-danger" onclick="return confirm('Are sure want to delete')" value=" Delete Course ">
+
+        <a class="btn btn-dark" asp-area="" asp-page="/Course/Index">Go to index</a>
+    </form>
+</div>
